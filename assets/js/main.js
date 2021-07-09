@@ -71,23 +71,44 @@ tabs.forEach(tab => {
 
 const modalViews = document.querySelectorAll(".services__modal")
 const modalBtns = document.querySelectorAll(".services__button")
- const modalCloses = document.querySelectorAll(".services__modal-close")
+const modalCloses = document.querySelectorAll(".services__modal-close")
 
- let modal = function(modalClick){
-     modalViews[modalClick].classList.add("active-modal")
- }
+let modal = function (modalClick) {
+    modalViews[modalClick].classList.add("active-modal")
+}
 
- modalBtns.forEach((modalBtn, i) => {
-     modalBtn.addEventListener("click", ()=>{
-         modal(i)
-     })
- })
+modalBtns.forEach((modalBtn, i) => {
+    modalBtn.addEventListener("click", () => {
+        modal(i)
+    })
+})
 
- modalCloses.forEach((modalClose) =>{
-     modalClose.addEventListener("click", ()=>{
-         modalViews.forEach((modalView) =>{
-             modalView.classList.remove("active-modal")
-         })
-     })
- })
+modalCloses.forEach((modalClose) => {
+    modalClose.addEventListener("click", () => {
+        modalViews.forEach((modalView) => {
+            modalView.classList.remove("active-modal")
+        })
+    })
+})
+/*============== portfolio ===============*/
+let swiper = new Swiper(".portfolio__container", {
+    cssMode: true,
+    loop:true,
 
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    }
+})
+
+// scrooltop
+
+// function scrollTop()[
+//     const scrollTop = document.getElementById("scroll-top");
+
+//     if(this.scrollY >= 560) scrollTop.classList.add
+// ]
